@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Activity.MainActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/btmNav"
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="@dimen/_45sdp"
         android:layout_gravity="bottom"
         app:itemRippleColor="@color/colorPrimary"
-        app:elevation="24dp"
+        app:elevation="@dimen/_20sdp"
         app:itemIconTint="@drawable/bottom_nav_selector"
         app:itemTextColor="@drawable/bottom_nav_selector"
         android:animationCache="true"

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_20sdp"
+    tools:context=".Activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/loginLogo"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        android:contentDescription="@string/image_description"
+        android:src="@drawable/logologin" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/airbnb_bold"
+        android:text="@string/welcome"
+        android:textColor="#3F4247"
+        android:textSize="@dimen/_24ssp" />
+
+    <TextView
+        android:id="@+id/welcomeDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/airbnb_book"
+        android:text="@string/welcomeDesc"
+        android:textColor="@color/text"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/txt_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:fontFamily="@font/airbnb_medium"
+        android:text="@string/email"
+        android:textColor="@color/text"
+        android:textSize="@dimen/_12ssp" />
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_36sdp"
+        android:autofillHints="@string/exampleUsername"
+        android:background="@drawable/edittext_style_login"
+        android:fontFamily="@font/airbnb_book"
+        android:hint="@string/exampleUsername"
+        android:inputType="textEmailAddress"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_5sdp"
+        android:textColor="#3F4247"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/txt_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:fontFamily="@font/airbnb_medium"
+        android:text="@string/password"
+        android:textColor="@color/text"
+        android:textSize="@dimen/_12ssp" />
+
+    <EditText
+        android:id="@+id/et_password"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_36sdp"
+        android:autofillHints="@string/examplePassword"
+        android:background="@drawable/edittext_style_login"
+        android:fontFamily="@font/airbnb_book"
+        android:hint="@string/examplePassword"
+        android:inputType="textPassword"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_5sdp"
+        android:textColor="#3F4247"
+        android:textSize="@dimen/_12ssp" />
+
+    <Button
+        android:id="@+id/btn_Login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:background="@drawable/button_login"
+        android:fontFamily="@font/airbnb_bold"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_14ssp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/_46sdp"
+        android:paddingEnd="@dimen/_1sdp">
+
+        <TextView
+            android:id="@+id/haveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/airbnb_medium"
+            android:text="@string/loginDesc"
+            android:textAllCaps="false"
+            android:textColor="#3F4247"
+            android:textSize="@dimen/_11ssp" />
+
+        <TextView
+            android:id="@+id/toRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_3sdp"
+            android:fontFamily="@font/airbnb_bold"
+            android:text="@string/loginDescRegister"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_11ssp" />
+
+    </LinearLayout>
+
+</LinearLayout>

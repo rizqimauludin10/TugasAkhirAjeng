@@ -1,4 +1,4 @@
-package com.rizqimauludin.tugasakhirajeng;
+package com.rizqimauludin.tugasakhirajeng.Activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -12,6 +12,7 @@ import com.rizqimauludin.tugasakhirajeng.Adapter.ViewPagerAdapter;
 import com.rizqimauludin.tugasakhirajeng.Fragment.HomeFragment;
 import com.rizqimauludin.tugasakhirajeng.Fragment.LearnFragment;
 import com.rizqimauludin.tugasakhirajeng.Fragment.ProfileFragment;
+import com.rizqimauludin.tugasakhirajeng.R;
 
 public class MainActivity extends AppCompatActivity {
 

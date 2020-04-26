@@ -5,4 +5,23 @@
     <string name="tab_saldo">Saldo</string>
     <string name="tab_user">Profil</string>
     <string name="image_description">TODO</string>
+    <string name="welcome">Welcome!</string>
+    <string name="welcome_register">Create Account</string>
+    <string name="welcomeDesc_register">Sign up and start explore</string>
+    <string name="welcomeDesc">Login your account</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="exampleUsername">example@gmail.com</string>
+    <string name="exampleName">Ajeng Febriani</string>
+    <string name="password">Password</string>
+    <string name="phone">Phone Number</string>
+    <string name="examplePassword">**********</string>
+    <string name="examplePhone">85690******</string>
+    <string name="examplePhoneInit">+62</string>
+    <string name="login">LOGIN</string>
+    <string name="register">SIGN UP</string>
+    <string name="loginDesc">Don\'t have an account?</string>
+    <string name="registerDesc">Already have an account?</string>
+    <string name="loginDescRegister">Sign up</string>
+    <string name="RegisterDescLogin">Login</string>
 </resources>
