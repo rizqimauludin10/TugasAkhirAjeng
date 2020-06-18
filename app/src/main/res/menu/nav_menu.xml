@@ -5,14 +5,14 @@
         android:id="@+id/menu_home"
         android:checked="true"
         android:icon="@drawable/ic_beranda"
-        android:title="@string/tab_beranda"
+        android:title="@string/tab_home"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/menu_learn"
         android:checked="false"
         android:icon="@drawable/ic_saldo"
-        android:title="@string/tab_saldo"
+        android:title="@string/tab_course"
         app:showAsAction="ifRoom" />
 
     <item

@@ -1,11 +1,13 @@
 package com.rizqimauludin.tugasakhirajeng.Helper;
 
+import com.rizqimauludin.tugasakhirajeng.Model.Essay.EssayResponse;
 import com.rizqimauludin.tugasakhirajeng.Model.Login.LoginResponse;
 import com.rizqimauludin.tugasakhirajeng.Model.Register.RegisterResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface BaseAPIService {
@@ -25,4 +27,7 @@ public interface BaseAPIService {
             @Field("password") String password,
             @Field("no_hp") String no_hp
     );
+
+    @GET("soal-essay")
+    Call<EssayResponse> getEssay();
 }
