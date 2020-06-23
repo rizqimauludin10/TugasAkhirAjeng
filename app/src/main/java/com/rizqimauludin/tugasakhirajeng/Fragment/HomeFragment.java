@@ -12,11 +12,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.rizqimauludin.tugasakhirajeng.Activity.EssayActivity;
+import com.rizqimauludin.tugasakhirajeng.Activity.LatihanActivity;
 import com.rizqimauludin.tugasakhirajeng.R;
 
 public class HomeFragment extends Fragment {
 
-    LinearLayout essay;
+    LinearLayout essay, latihan;
 
     public HomeFragment() {
     }
@@ -32,9 +33,15 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         essay = view.findViewById(R.id.essay);
+        latihan = view.findViewById(R.id.latihan);
 
         essay.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), EssayActivity.class);
+            startActivity(intent);
+        });
+
+        latihan.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), LatihanActivity.class);
             startActivity(intent);
         });
     }

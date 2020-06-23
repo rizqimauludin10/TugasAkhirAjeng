@@ -3,7 +3,6 @@ package com.rizqimauludin.tugasakhirajeng.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -33,9 +32,6 @@ public class EssayActivity extends AppCompatActivity {
     private RecyclerView.Adapter essayAdapter;
     private List<EssayDataItem> essayDataItems = new ArrayList<>();
     private BaseAPIService baseAPIService;
-    private EssayResponse essayResponse;
-    private TextView tv_soal;
-    private String soal;
 
 
     @Override
@@ -79,7 +75,6 @@ public class EssayActivity extends AppCompatActivity {
                     @Override
                     public void onFailure(@NotNull Call<EssayResponse> call, @NotNull Throwable t) {
                         Log.d("TAG", "Response = " + t.toString());
-
                     }
                 });
 

@@ -25,10 +25,10 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.EssayHolder>
         this.essayDataItemList = essayDataItemList;
     }
 
-    public void setEssayDataItemList(List<EssayDataItem> essayDataItemList) {
+    /*public void setEssayDataItemList(List<EssayDataItem> essayDataItemList) {
         this.essayDataItemList = essayDataItemList;
         notifyDataSetChanged();
-    }
+    }*/
 
     @NonNull
     @Override

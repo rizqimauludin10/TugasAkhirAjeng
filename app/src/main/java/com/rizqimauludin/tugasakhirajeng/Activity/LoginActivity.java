@@ -80,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                                 loginResponse = response.body().getData();
 
                                 String username = loginResponse.getUsers().getName();
-                                String email = loginResponse.getUsers().getName();
+                                String email = loginResponse.getUsers().getEmail();
                                 String phone = loginResponse.getProfil().getNoHp();
 
                                 Log.d("Username", "Username" + loginResponse.getUsers().getName());

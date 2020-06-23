@@ -1,6 +1,7 @@
 package com.rizqimauludin.tugasakhirajeng.Helper;
 
 import com.rizqimauludin.tugasakhirajeng.Model.Essay.EssayResponse;
+import com.rizqimauludin.tugasakhirajeng.Model.Latihan.LatihanResponse;
 import com.rizqimauludin.tugasakhirajeng.Model.Login.LoginResponse;
 import com.rizqimauludin.tugasakhirajeng.Model.Register.RegisterResponse;
 
@@ -30,4 +31,7 @@ public interface BaseAPIService {
 
     @GET("soal-essay")
     Call<EssayResponse> getEssay();
+
+    @GET("soal-latihan")
+    Call<LatihanResponse> getLatihan();
 }
