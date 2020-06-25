@@ -146,7 +146,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/airbnb_book"
                     android:padding="20dp"
-                    android:text="Sign out"
+                    android:text="Logout"
                     android:textSize="@dimen/_12ssp" />
 
 

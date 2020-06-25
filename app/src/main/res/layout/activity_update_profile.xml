@@ -31,23 +31,191 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:fontFamily="@font/airbnb_bold"
-                android:text="Username"
+                android:text="Fullname"
                 android:textColor="@color/text"
-                android:textSize="@dimen/_12ssp" />
+                android:textSize="@dimen/_11ssp" />
 
             <EditText
-                android:id="@+id/updateUsername"
+                android:id="@+id/updateFullName"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:autofillHints="Username"
                 android:background="@drawable/edittext"
                 android:fontFamily="@font/airbnb_book"
+                android:hint="Ajeng Febriani"
                 android:inputType="text"
-                android:paddingLeft="20dp"
+                android:paddingStart="@dimen/_12sdp"
                 android:textColor="@color/text"
-                android:textSize="16sp" />
+                android:textSize="@dimen/_10ssp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/airbnb_bold"
+                android:text="NIS"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_11ssp" />
+
+            <EditText
+                android:id="@+id/updateNis"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:autofillHints="Nomor Induk Siswa"
+                android:background="@drawable/edittext"
+                android:fontFamily="@font/airbnb_book"
+                android:hint="Nomor Induk Siswa"
+                android:inputType="text"
+                android:paddingStart="@dimen/_12sdp"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/airbnb_bold"
+                android:text="Gender"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_11ssp" />
+
+            <RadioGroup
+                android:id="@+id/genderRg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rgMale"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/airbnb_book"
+                    android:text="Male"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_10ssp" />
+
+                <RadioButton
+                    android:id="@+id/rgWomen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/airbnb_book"
+                    android:text="Female"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_10ssp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/airbnb_bold"
+                android:text="Place of Birth"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_11ssp" />
+
+            <EditText
+                android:id="@+id/updatePlaceOfBirth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:autofillHints="Pontianak"
+                android:background="@drawable/edittext"
+                android:fontFamily="@font/airbnb_book"
+                android:hint="Pontianak"
+                android:inputType="text"
+                android:paddingLeft="@dimen/_12sdp"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_10ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/airbnb_bold"
+                android:text="Date of Birth"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_11ssp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp">
+
+                <EditText
+                    android:id="@+id/updateDateOfBirth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_40sdp"
+                    android:autofillHints="01-01-2000"
+                    android:background="@drawable/edittext"
+                    android:ems="6"
+                    android:fontFamily="@font/airbnb_book"
+                    android:hint="01-01-2000"
+                    android:inputType="date"
+                    android:paddingLeft="@dimen/_12sdp"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/_10ssp" />
+
+                <ImageView
+                    android:id="@+id/datePicker"
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_toEndOf="@id/updateDateOfBirth"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/ic_calendar" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/airbnb_bold"
+                android:text="Phone Number"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_11ssp" />
+
+            <EditText
+                android:id="@+id/updatePhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:autofillHints="0813********"
+                android:background="@drawable/edittext"
+                android:ems="12"
+                android:fontFamily="@font/airbnb_book"
+                android:hint="0813********"
+                android:inputType="phone"
+                android:paddingLeft="@dimen/_12sdp"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_10ssp" />
+
+            <Button
+                android:id="@+id/btn_UpdateData"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:background="@drawable/update_button"
+                android:fontFamily="@font/airbnb_bold"
+                android:text="@string/updateProfile"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp" />
 
         </LinearLayout>
+
 
     </androidx.core.widget.NestedScrollView>
 

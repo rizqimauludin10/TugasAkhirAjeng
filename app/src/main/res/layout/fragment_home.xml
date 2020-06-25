@@ -2,115 +2,330 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:orientation="vertical">
 
     <include
         layout="@layout/toolbar_home"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize" />
 
-    <LinearLayout
-        android:id="@+id/body"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="@dimen/_15sdp">
+        android:layout_height="wrap_content"
+        android:overScrollMode="never">
 
         <LinearLayout
-            android:id="@+id/head"
+            android:id="@+id/body"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_180sdp"
-            android:layout_marginBottom="@dimen/_15sdp"
-            android:background="@drawable/home_menu"
-            android:clickable="true"
-            android:elevation="@dimen/_5sdp"
-            android:focusable="true"
-            android:orientation="horizontal"
-            android:padding="@dimen/_10sdp">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/_15sdp">
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/essay"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_65sdp"
-            android:layout_marginBottom="@dimen/_15sdp"
-            android:background="@drawable/home_menu"
-            android:clickable="true"
-            android:elevation="@dimen/_3sdp"
-            android:focusable="true"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/txt_essay"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/airbnb_bold"
-                android:padding="@dimen/_10sdp"
-                android:text="Kuis"
-                android:textColor="#3F4247"
-                android:textSize="@dimen/_14ssp" />
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
+                android:id="@+id/head"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_180sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/home_menu"
+                android:clickable="true"
+                android:elevation="@dimen/_5sdp"
+                android:focusable="true"
                 android:orientation="horizontal">
 
-            </RelativeLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:fontFamily="@font/airbnb_bold"
+                        android:text="Hi,"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_18ssp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_35sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:fontFamily="@font/airbnb_black"
+                        android:lines="2"
+                        android:text="Rizqi Mauludin"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_18ssp" />
+
+                    <ImageView
+                        android:layout_width="@dimen/_180sdp"
+                        android:layout_height="@dimen/_180sdp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/_90sdp"
+                        android:layout_marginTop="@dimen/_23sdp"
+                        android:contentDescription="@string/todo"
+                        android:src="@drawable/homeillus" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/essay"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/home_menu_sub"
+                android:clickable="true"
+                android:elevation="@dimen/_3sdp"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/org"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/sub_menu_orange"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:layout_gravity="center_vertical"
+                            android:foregroundGravity="center_horizontal"
+                            android:src="@drawable/quiz" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txt_essay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toEndOf="@id/org"
+                        android:fontFamily="@font/airbnb_bold"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Quiz"
+                        android:textColor="#E96B00"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <TextView
+                        android:id="@+id/txt_essay_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_essay"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toEndOf="@id/org"
+                        android:fontFamily="@font/airbnb_book"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:text="@string/lorem"
+                        android:textColor="@color/text"
+                        android:textSize="@dimen/_11ssp" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/exam"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/home_menu_sub"
+                android:clickable="true"
+                android:elevation="@dimen/_3sdp"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/red"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/sub_menu_red"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_43sdp"
+                            android:layout_gravity="center_vertical"
+                            android:foregroundGravity="center_horizontal"
+                            android:src="@drawable/exam" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txt_exam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toEndOf="@id/red"
+                        android:fontFamily="@font/airbnb_bold"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Exam"
+                        android:textColor="#DC5C5C"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <TextView
+                        android:id="@+id/txt_exam_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_exam"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toEndOf="@id/red"
+                        android:fontFamily="@font/airbnb_book"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:text="@string/lorem"
+                        android:textColor="@color/text"
+                        android:textSize="@dimen/_11ssp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/exercise"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/home_menu_sub"
+                android:clickable="true"
+                android:elevation="@dimen/_3sdp"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/green"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/sub_menu_green"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_gravity="center_vertical"
+                            android:foregroundGravity="center_horizontal"
+                            android:src="@drawable/excercis" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txt_exercise"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toEndOf="@id/green"
+                        android:fontFamily="@font/airbnb_bold"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="Exercise"
+                        android:textColor="#47A2BA"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <TextView
+                        android:id="@+id/txt_exercise_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_exercise"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toEndOf="@id/green"
+                        android:fontFamily="@font/airbnb_book"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:text="@string/lorem"
+                        android:textColor="@color/text"
+                        android:textSize="@dimen/_11ssp" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginBottom="@dimen/_15sdp"
+                android:background="@drawable/home_menu_sub"
+                android:clickable="true"
+                android:elevation="@dimen/_3sdp"
+                android:focusable="true"
+                android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/blue"
+                        android:layout_width="@dimen/_90sdp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/sub_menu_blue"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_38sdp"
+                            android:layout_gravity="center_vertical"
+                            android:foregroundGravity="center_horizontal"
+                            android:src="@drawable/about" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txt_about"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toEndOf="@id/blue"
+                        android:fontFamily="@font/airbnb_bold"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:paddingTop="@dimen/_10sdp"
+                        android:paddingRight="@dimen/_10sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="About"
+                        android:textColor="#4B5FD1"
+                        android:textSize="@dimen/_16ssp" />
+
+                    <TextView
+                        android:id="@+id/txt_about_desc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txt_about"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toEndOf="@id/blue"
+                        android:fontFamily="@font/airbnb_book"
+                        android:paddingLeft="@dimen/_10sdp"
+                        android:text="@string/lorem"
+                        android:textColor="@color/text"
+                        android:textSize="@dimen/_11ssp" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/ulangan"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_65sdp"
-            android:layout_marginBottom="@dimen/_15sdp"
-            android:background="@drawable/home_menu"
-            android:clickable="true"
-            android:elevation="@dimen/_3sdp"
-            android:focusable="true"
-            android:orientation="horizontal"
-            android:padding="@dimen/_10sdp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/airbnb_bold"
-                android:text="Ulangan"
-                android:textColor="#3F4247"
-                android:textSize="@dimen/_14ssp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/latihan"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_65sdp"
-            android:layout_marginBottom="@dimen/_15sdp"
-            android:background="@drawable/home_menu"
-            android:clickable="true"
-            android:elevation="@dimen/_2sdp"
-            android:focusable="true"
-            android:orientation="horizontal"
-            android:padding="@dimen/_10sdp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:fontFamily="@font/airbnb_bold"
-                android:text="Latihan"
-                android:textColor="#3F4247"
-                android:textSize="@dimen/_14ssp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
 
 
 </LinearLayout>

@@ -18,11 +18,13 @@
     <string name="examplePhone">85690******</string>
     <string name="examplePhoneInit">+62</string>
     <string name="login">LOGIN</string>
-    <string name="register">SIGN UP</string>
+    <string name="updateProfile">Update Profile</string>
+    <string name="register">REGISTER</string>
     <string name="loginDesc">Don\'t have an account?</string>
     <string name="registerDesc">Already have an account?</string>
-    <string name="loginDescRegister">Sign up</string>
+    <string name="loginDescRegister">REGISTER</string>
     <string name="RegisterDescLogin">Login</string>
     <string name="todo">TODO</string>
-    <string name="videoUrl">qzcGfN9S_QY</string>
+    <string name="videoUrl">wLVB9b5pLAs</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabiturerat</string>
 </resources>

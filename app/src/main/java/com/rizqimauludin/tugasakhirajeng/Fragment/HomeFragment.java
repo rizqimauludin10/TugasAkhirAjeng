@@ -33,7 +33,7 @@ public class HomeFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         essay = view.findViewById(R.id.essay);
-        latihan = view.findViewById(R.id.latihan);
+        latihan = view.findViewById(R.id.exercise);
 
         essay.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), EssayActivity.class);

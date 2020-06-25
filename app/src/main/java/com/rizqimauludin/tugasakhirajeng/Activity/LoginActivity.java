@@ -82,6 +82,8 @@ public class LoginActivity extends AppCompatActivity {
                                 String username = loginResponse.getUsers().getName();
                                 String email = loginResponse.getUsers().getEmail();
                                 String phone = loginResponse.getProfil().getNoHp();
+                                Integer id = loginResponse.getUsers().getId();
+
 
                                 Log.d("Username", "Username" + loginResponse.getUsers().getName());
                                 Log.d("Email", "Email" + loginResponse.getUsers().getEmail());
@@ -90,6 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                                 sharedPreferences.saveSPString(SharedPreferencesUtils.SP_Email, email);
                                 sharedPreferences.saveSPString(SharedPreferencesUtils.SP_Phone, phone);
                                 sharedPreferences.saveSPBoolean(SharedPreferencesUtils.SP_Login, true);
+                                sharedPreferences.saveSPString(SharedPreferencesUtils.SP_UserId, String.valueOf(id));
 
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class)
                                         .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);

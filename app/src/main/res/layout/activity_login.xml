@@ -87,7 +87,7 @@
     <Button
         android:id="@+id/btn_Login"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_38sdp"
+        android:layout_height="@dimen/_45sdp"
         android:layout_marginTop="@dimen/_24sdp"
         android:background="@drawable/button_login"
         android:fontFamily="@font/airbnb_bold"
