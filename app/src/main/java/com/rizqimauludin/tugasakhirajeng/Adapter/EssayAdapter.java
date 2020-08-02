@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.rizqimauludin.tugasakhirajeng.Model.Essay.EssayDataItem;
@@ -25,10 +26,6 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.EssayHolder>
         this.essayDataItemList = essayDataItemList;
     }
 
-    /*public void setEssayDataItemList(List<EssayDataItem> essayDataItemList) {
-        this.essayDataItemList = essayDataItemList;
-        notifyDataSetChanged();
-    }*/
 
     @NonNull
     @Override
@@ -39,8 +36,10 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.EssayHolder>
 
     @Override
     public void onBindViewHolder(@NonNull EssayAdapter.EssayHolder holder, int position) {
+        String item = (String.valueOf(holder.getAdapterPosition() + 1));
         final EssayDataItem essayDataItem = essayDataItemList.get(position);
-        holder.essaySoal.setText(essayDataItem.getSoal());
+        holder.essaySoal.setText(HtmlCompat.fromHtml(essayDataItem.getSoal(), 0));
+        holder.essayNo.setText(item);
     }
 
     @Override
@@ -50,11 +49,13 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.EssayHolder>
 
     static class EssayHolder extends RecyclerView.ViewHolder {
         public TextView essaySoal;
+        public TextView essayNo;
 
         EssayHolder(View view) {
             super(view);
 
             essaySoal = view.findViewById(R.id.essaySoal);
+            essayNo = view.findViewById(R.id.essayNo);
 
         }
     }

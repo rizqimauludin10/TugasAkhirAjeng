@@ -1,6 +1,8 @@
 package com.rizqimauludin.tugasakhirajeng.Activity;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
@@ -8,10 +10,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.datepicker.MaterialDatePicker;
 import com.rizqimauludin.tugasakhirajeng.Helper.BaseAPIService;
 import com.rizqimauludin.tugasakhirajeng.Helper.UtilsAPI;
 import com.rizqimauludin.tugasakhirajeng.Model.UpdateProfile.UpdateProfileResponse;
@@ -31,6 +33,8 @@ import retrofit2.Response;
 
 public class UpdateProfileActivity extends AppCompatActivity {
 
+    private ProgressDialog loading;
+    private Context context;
     EditText dateOfBirth, fullName, nis, placeBirth, phoneNumber;
     RadioGroup genderRg;
     ImageView datePicker, backProfile;
@@ -44,6 +48,8 @@ public class UpdateProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_profile);
+
+        context = this;
         sharedPreferences = new SharedPreferencesUtils(this);
         baseAPIService = UtilsAPI.getApiService();
 
@@ -65,9 +71,6 @@ public class UpdateProfileActivity extends AppCompatActivity {
         RadioButton male = findViewById(R.id.rgMale);
         RadioButton female = findViewById(R.id.rgWomen);
 
-        MaterialDatePicker.Builder builder = MaterialDatePicker.Builder.datePicker();
-        builder.setTitleText("Select a Date");
-        final MaterialDatePicker materialDatePicker = builder.build();
 
         datePicker.setOnClickListener(v -> {
             Calendar calendar = Calendar.getInstance();
@@ -101,17 +104,14 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
         checkDataId();
 
-        btUpdateData.setOnClickListener(v -> {
-            updateUserData();
-        });
+        btUpdateData.setOnClickListener(v -> updateUserData());
 
-        backProfile.setOnClickListener(v -> {
-            onBackPressed();
-        });
+        backProfile.setOnClickListener(v -> onBackPressed());
     }
 
 
     private void updateUserData() {
+        loading = ProgressDialog.show(context, null, "Loading..", true, false);
         baseAPIService.getUpdateProfile(
                 id,
                 fullName.getText().toString(),
@@ -123,9 +123,12 @@ public class UpdateProfileActivity extends AppCompatActivity {
         ).enqueue(new Callback<UpdateProfileResponse>() {
             @Override
             public void onResponse(@NotNull Call<UpdateProfileResponse> call, @NotNull Response<UpdateProfileResponse> response) {
+                loading.dismiss();
                 if (response.isSuccessful()) {
                     assert response.body() != null;
                     if (response.body().isStatus()) {
+                        Toast.makeText(UpdateProfileActivity.this, "Update Data Successful", Toast.LENGTH_SHORT).show();
+                        onBackPressed();
                         Log.d("Success", "Update Data Success");
                     } else if (!response.body().isStatus()) {
                         Log.d("Failed", "Update Data Failed");
@@ -135,6 +138,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NotNull Call<UpdateProfileResponse> call, @NotNull Throwable t) {
+                loading.dismiss();
                 Log.e("Login", "OnFailure: ERROR > " + t.toString());
             }
         });
@@ -142,11 +146,13 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
 
     private void checkDataId() {
+        loading = ProgressDialog.show(context, null, "Loading..", true, false);
         baseAPIService.getUser(
                 id
         ).enqueue(new Callback<UserResponse>() {
             @Override
             public void onResponse(@NotNull Call<UserResponse> call, @NotNull Response<UserResponse> response) {
+                loading.dismiss();
                 if (response.isSuccessful()) {
                     assert response.body() != null;
                     if (response.body().isStatus()) {
@@ -163,6 +169,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NotNull Call<UserResponse> call, @NotNull Throwable t) {
+                loading.dismiss();
                 Log.e("Login", "OnFailure: ERROR > " + t.toString());
             }
         });

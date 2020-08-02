@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:clickable="true"
+    android:focusable="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/_15sdp"
+        android:paddingRight="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/pilganNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:fontFamily="@font/airbnb_book"
+            android:text="1."
+            android:textColor="@color/text"
+            android:textSize="@dimen/_16ssp" />
+
+        <TextView
+            android:id="@+id/pilganSoal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/airbnb_book"
+            android:text="@string/lorem"
+            android:textAllCaps="false"
+            android:textColor="@color/text"
+            android:textSize="@dimen/_16ssp" />
+
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/rgPilgan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_30sdp"
+        android:paddingRight="@dimen/_10sdp">
+
+        <RadioButton
+            android:id="@+id/rgA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:fontFamily="@font/airbnb_book"
+            android:text="A"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_10ssp" />
+
+        <RadioButton
+            android:id="@+id/rgB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:fontFamily="@font/airbnb_book"
+            android:text="B"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_10ssp" />
+
+        <RadioButton
+            android:id="@+id/rgC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:fontFamily="@font/airbnb_book"
+            android:text="C"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_10ssp" />
+
+        <RadioButton
+            android:id="@+id/rgD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:fontFamily="@font/airbnb_book"
+            android:text="D"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_10ssp" />
+
+        <RadioButton
+            android:id="@+id/rgE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_weight="1"
+            android:fontFamily="@font/airbnb_book"
+            android:text="E"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_10ssp" />
+
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/pilganJawaban"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/airbnb_book"
+        android:text="jawaban"
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        android:textSize="@dimen/_16ssp" />
+
+
+</LinearLayout>

@@ -34,8 +34,10 @@ public class LatihanAdapter extends RecyclerView.Adapter<LatihanAdapter.LatihanH
 
     @Override
     public void onBindViewHolder(@NonNull LatihanHolder holder, int position) {
+        String item = (String.valueOf(holder.getAdapterPosition() + 1));
         final LatihanDataItem latihanDataItem = latihanDataItems.get(position);
         holder.latihanSoal.setText(HtmlCompat.fromHtml(latihanDataItem.getSoal(), 0));
+        holder.latihanNo.setText(item);
 
     }
 
@@ -46,10 +48,12 @@ public class LatihanAdapter extends RecyclerView.Adapter<LatihanAdapter.LatihanH
 
     public class LatihanHolder extends RecyclerView.ViewHolder {
         public TextView latihanSoal;
+        public TextView latihanNo;
 
         public LatihanHolder(View view) {
             super(view);
 
+            latihanNo = view.findViewById(R.id.latihanNo);
             latihanSoal = view.findViewById(R.id.latihanSoal);
         }
     }

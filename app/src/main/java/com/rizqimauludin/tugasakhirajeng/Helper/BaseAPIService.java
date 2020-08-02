@@ -1,8 +1,10 @@
 package com.rizqimauludin.tugasakhirajeng.Helper;
 
 import com.rizqimauludin.tugasakhirajeng.Model.Essay.EssayResponse;
+import com.rizqimauludin.tugasakhirajeng.Model.HasilPilgan.HasilPilganResponse;
 import com.rizqimauludin.tugasakhirajeng.Model.Latihan.LatihanResponse;
 import com.rizqimauludin.tugasakhirajeng.Model.Login.LoginResponse;
+import com.rizqimauludin.tugasakhirajeng.Model.Pilgan.PilganResponse;
 import com.rizqimauludin.tugasakhirajeng.Model.Register.RegisterResponse;
 import com.rizqimauludin.tugasakhirajeng.Model.UpdateProfile.UpdateProfileResponse;
 import com.rizqimauludin.tugasakhirajeng.Model.User.UserResponse;
@@ -43,6 +45,13 @@ public interface BaseAPIService {
             @Path("id") String id
     );
 
+    @POST("hasil-pilgan/{id}")
+    Call<HasilPilganResponse> getHasilPilgan(
+            @Path("id") String id,
+            @Field("nilai") String nilai
+    );
+
+
     @FormUrlEncoded
     @POST("profil/update")
     Call<UpdateProfileResponse> getUpdateProfile(
@@ -54,5 +63,8 @@ public interface BaseAPIService {
             @Field("tempat_lahir") String tempat_lahir,
             @Field("tanggal_lahir") String tanggal_lahir
     );
+
+    @GET("soal-pilgan")
+    Call<PilganResponse> getPilganResponse();
 
 }

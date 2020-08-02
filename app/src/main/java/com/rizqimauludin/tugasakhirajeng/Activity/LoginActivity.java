@@ -1,5 +1,7 @@
 package com.rizqimauludin.tugasakhirajeng.Activity;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +27,8 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
+    private ProgressDialog loading;
+    private Context context;
     Button loginButton;
     TextView toRegister;
     EditText username, password;
@@ -40,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
         baseAPIService = UtilsAPI.getApiService();
         sharedPreferences = new SharedPreferencesUtils(this);
+        context = this;
 
         username = findViewById(R.id.et_username);
         password = findViewById(R.id.et_password);
@@ -66,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
+        loading = ProgressDialog.show(context, null, "Loading..", true, false);
         baseAPIService.getLoginResponse(
                 username.getText().toString(),
                 password.getText().toString()
@@ -73,6 +79,7 @@ public class LoginActivity extends AppCompatActivity {
                 .enqueue(new Callback<LoginResponse>() {
                     @Override
                     public void onResponse(@NotNull Call<LoginResponse> call, @NotNull Response<LoginResponse> response) {
+                        loading.dismiss();
                         if (response.isSuccessful()) {
                             assert response.body() != null;
                             if (response.body().isStatus()) {
@@ -110,6 +117,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(@NotNull Call<LoginResponse> call, @NotNull Throwable t) {
+                        loading.dismiss();
                         Log.e("Login", "OnFailure: ERROR > " + t.toString());
 
                     }

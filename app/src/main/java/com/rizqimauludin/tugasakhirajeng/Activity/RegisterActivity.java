@@ -1,5 +1,7 @@
 package com.rizqimauludin.tugasakhirajeng.Activity;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,6 +26,8 @@ import retrofit2.Response;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    private ProgressDialog loading;
+    private Context context;
     TextView toLogin;
     Button registerButton;
     EditText username, email, password, phone;
@@ -36,6 +40,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        context = this;
 
         baseAPIService = UtilsAPI.getApiService();
 
@@ -58,6 +64,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void register() {
+        loading = ProgressDialog.show(context, null, "Loading..", true, false);
         baseAPIService.getRegisterResponse(
                 username.getText().toString(),
                 email.getText().toString(),
@@ -66,6 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
         ).enqueue(new Callback<RegisterResponse>() {
             @Override
             public void onResponse(@NotNull Call<RegisterResponse> call, @NotNull Response<RegisterResponse> response) {
+                loading.dismiss();
                 if (response.isSuccessful()) {
                     assert response.body() != null;
                     if (response.body().isStatus()) {
@@ -88,6 +96,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(@NotNull Call<RegisterResponse> call, @NotNull Throwable t) {
+                loading.dismiss();
                 Log.e("Login", "OnFailure: ERROR > " + t.toString());
             }
         });
