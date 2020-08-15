@@ -75,8 +75,8 @@ public class LearnFragment extends Fragment {
             public void onYouTubePlayerExitFullScreen() {
                 Log.d("ExitFull", "No");
                 //Objects.requireNonNull(getActivity()).setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-                Intent intent = new Intent(getActivity(), VideoActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(getActivity(), VideoActivity.class);
+                //startActivity(intent);
 
             }
         });
