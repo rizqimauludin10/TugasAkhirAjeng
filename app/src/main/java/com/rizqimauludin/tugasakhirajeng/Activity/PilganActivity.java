@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -44,6 +45,7 @@ public class PilganActivity extends AppCompatActivity {
     private double point;
     private double tampung, skor;
     private Button submit, yes, no;
+    private ImageView backMain;
     private AlertDialog.Builder builder;
     private LayoutInflater layoutInflater;
     private View view;
@@ -56,6 +58,7 @@ public class PilganActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pilgan);
 
         recyclerView = findViewById(R.id.pilganRv);
+        backMain = findViewById(R.id.backMainExercise);
         //viewSkor = findViewById(R.id.viewSkor);
         submit = findViewById(R.id.submit);
         context = this;
@@ -73,6 +76,10 @@ public class PilganActivity extends AppCompatActivity {
 
         submit.setOnClickListener(v -> {
             DialogForm();
+        });
+
+        backMain.setOnClickListener(v -> {
+            onBackPressed();
         });
 
     }
@@ -100,6 +107,7 @@ public class PilganActivity extends AppCompatActivity {
             @Override
             public void onResponse(@NotNull Call<PilganResponse> call, @NotNull Response<PilganResponse> response) {
                 if (response.isSuccessful()) {
+                    assert response.body() != null;
                     if (response.body().isStatus()) {
                         pilganDataItems = response.body().getData();
                         recyclerView.setAdapter(new PilganAdapter(context, pilganDataItems));
@@ -170,5 +178,10 @@ public class PilganActivity extends AppCompatActivity {
             builder.dismiss();
         });
         builder.show();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

@@ -106,39 +106,11 @@
 
             </RelativeLayout>
 
-
-            <RelativeLayout
-                android:id="@+id/toSetting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/_16sdp"
-                android:layout_marginRight="@dimen/_16sdp"
-                android:background="@drawable/profile_linear">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/airbnb_book"
-                    android:padding="20dp"
-                    android:text="Setting"
-                    android:textSize="@dimen/_12ssp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:contentDescription="@string/todo"
-                    android:padding="20dp"
-                    android:src="@drawable/profile_arrow" />
-
-            </RelativeLayout>
-
             <RelativeLayout
                 android:id="@+id/toSignOut"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_16sdp"
-                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_16sdp">
 
                 <TextView

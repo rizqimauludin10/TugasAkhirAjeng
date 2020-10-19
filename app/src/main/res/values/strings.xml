@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TugasAkhirAjeng</string>
+    <string name="app_name">MathStack</string>
     <string name="tab_home">Home</string>
     <string name="tab_course">Course</string>
     <string name="tab_user">Profile</string>
@@ -25,8 +25,8 @@
     <string name="loginDescRegister">REGISTER</string>
     <string name="RegisterDescLogin">Login</string>
     <string name="todo">TODO</string>
-    <string name="videoUrl">S7bJQGCuwTU</string>
-    <string name="videoUrl2">hFVyd63KMoA</string>
-    <string name="videoUrl3">51DyjWX2s4E</string>
+    <string name="videoUrl">c_ANJKxeyUg</string>
+    <string name="videoUrl2">36AFYGByVRk</string>
+    <string name="videoUrl3">HHXXlYzKm-Y</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabiturerat</string>
 </resources>

@@ -8,6 +8,11 @@
     android:orientation="vertical"
     tools:context=".Activity.PilganActivity">
 
+    <include
+        layout="@layout/toolbar_exercise"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

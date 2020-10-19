@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.codesgood.views.JustifiedTextView;
 import com.rizqimauludin.tugasakhirajeng.Model.Essay.EssayDataItem;
 import com.rizqimauludin.tugasakhirajeng.R;
 
@@ -38,7 +39,7 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.EssayHolder>
     public void onBindViewHolder(@NonNull EssayAdapter.EssayHolder holder, int position) {
         String item = (String.valueOf(holder.getAdapterPosition() + 1));
         final EssayDataItem essayDataItem = essayDataItemList.get(position);
-        holder.essaySoal.setText(HtmlCompat.fromHtml(essayDataItem.getSoal(), 0));
+        holder.justifiedTextView.setText(HtmlCompat.fromHtml(essayDataItem.getSoal(), 0));
         holder.essayNo.setText(item);
     }
 
@@ -50,11 +51,12 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.EssayHolder>
     static class EssayHolder extends RecyclerView.ViewHolder {
         public TextView essaySoal;
         public TextView essayNo;
+        public JustifiedTextView justifiedTextView;
 
         EssayHolder(View view) {
             super(view);
 
-            essaySoal = view.findViewById(R.id.essaySoal);
+            justifiedTextView = view.findViewById(R.id.essaySoal);
             essayNo = view.findViewById(R.id.essayNo);
 
         }

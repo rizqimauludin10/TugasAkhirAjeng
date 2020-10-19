@@ -47,7 +47,7 @@ public class PilganAdapter extends RecyclerView.Adapter<PilganAdapter.PilganHold
         holder.rbC.setText(pilganDataItem.getPilihanC());
         holder.rbD.setText(pilganDataItem.getPilihanD());
         holder.rbE.setText(pilganDataItem.getPilihanE());
-        holder.pilganJawaban.setText(pilganDataItem.getJawaban());
+        //holder.pilganJawaban.setText(pilganDataItem.getJawaban());
     }
 
     @Override
@@ -82,7 +82,7 @@ public class PilganAdapter extends RecyclerView.Adapter<PilganAdapter.PilganHold
             rbC = itemView.findViewById(R.id.rgC);
             rbD = itemView.findViewById(R.id.rgD);
             rbE = itemView.findViewById(R.id.rgE);
-            pilganJawaban = itemView.findViewById(R.id.pilganJawaban);
+            //pilganJawaban = itemView.findViewById(R.id.pilganJawaban);
 
             rgPilgan.setOnCheckedChangeListener((group, checkedId) -> {
                 Integer radioId;

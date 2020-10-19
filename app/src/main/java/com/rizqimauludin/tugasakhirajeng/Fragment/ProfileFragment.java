@@ -43,7 +43,7 @@ public class ProfileFragment extends Fragment {
         email = view.findViewById(R.id.myEmail);
 
         toPersonalData = view.findViewById(R.id.toPersonalData);
-        toSetting = view.findViewById(R.id.toSetting);
+        //toSetting = view.findViewById(R.id.toSetting);
         toSignOut = view.findViewById(R.id.toSignOut);
 
         username.setText(sharedPreferences.getSp_Username());

@@ -23,7 +23,7 @@
                 android:layout_height="@dimen/_50sdp"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:contentDescription="@string/image_description"
-                android:src="@drawable/logologin" />
+                android:src="@drawable/logologinn" />
 
             <TextView
                 android:id="@+id/welcome"

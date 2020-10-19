@@ -1,10 +1,12 @@
 package com.rizqimauludin.tugasakhirajeng.Fragment;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -12,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.rizqimauludin.tugasakhirajeng.Activity.AboutActivity;
 import com.rizqimauludin.tugasakhirajeng.Activity.EssayActivity;
 import com.rizqimauludin.tugasakhirajeng.Activity.LatihanActivity;
 import com.rizqimauludin.tugasakhirajeng.Activity.PilganActivity;
@@ -22,8 +25,9 @@ import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
-    LinearLayout essay, latihan, exam;
+    LinearLayout essay, latihan, exam, about;
     TextView welcomeName;
+    ImageView wa;
     SharedPreferencesUtils sharedPreferencesUtils;
 
     public HomeFragment() {
@@ -45,6 +49,8 @@ public class HomeFragment extends Fragment {
         latihan = view.findViewById(R.id.exercise);
         welcomeName = view.findViewById(R.id.welcomeName);
         exam = view.findViewById(R.id.exam);
+        about = view.findViewById(R.id.about);
+        wa = view.findViewById(R.id.directWa);
 
         welcomeName.setText(sharedPreferencesUtils.getSp_Username());
 
@@ -62,5 +68,19 @@ public class HomeFragment extends Fragment {
             Intent intent = new Intent(getActivity(), PilganActivity.class);
             startActivity(intent);
         });
+
+        about.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), AboutActivity.class);
+            startActivity(intent);
+        });
+
+        wa.setOnClickListener(v -> {
+            String phone = "6285822053855";
+            Intent intent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://api.whatsapp.com/send?phone=" + phone + "&text=Saya%20perlu%20bantuan%20Admin%2MathStack%20"));
+            startActivity(intent);
+        });
+
+
     }
 }

@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingLeft="@dimen/_15sdp"
-        android:paddingRight="@dimen/_10sdp">
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_10sdp">
 
         <TextView
             android:id="@+id/pilganNo"
@@ -103,15 +103,15 @@
     </RadioGroup>
 
 
-    <TextView
-        android:id="@+id/pilganJawaban"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/airbnb_book"
-        android:text="jawaban"
-        android:textAllCaps="false"
-        android:textColor="@color/text"
-        android:textSize="@dimen/_16ssp" />
+    <!--  <TextView
+          android:id="@+id/pilganJawaban"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/airbnb_book"
+          android:text="jawaban"
+          android:textAllCaps="false"
+          android:textColor="@color/text"
+          android:textSize="@dimen/_16ssp" />-->
 
 
 </LinearLayout>
