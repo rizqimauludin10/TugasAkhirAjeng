@@ -45,6 +45,7 @@ public interface BaseAPIService {
             @Path("id") String id
     );
 
+    @FormUrlEncoded
     @POST("hasil-pilgan/{id}")
     Call<HasilPilganResponse> getHasilPilgan(
             @Path("id") String id,

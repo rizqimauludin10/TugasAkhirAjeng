@@ -10,11 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.core.text.HtmlCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.codesgood.views.JustifiedTextView;
 import com.rizqimauludin.tugasakhirajeng.Model.Essay.EssayDataItem;
 import com.rizqimauludin.tugasakhirajeng.R;
 
 import java.util.List;
+
 
 public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.EssayHolder> {
 
@@ -51,7 +51,7 @@ public class EssayAdapter extends RecyclerView.Adapter<EssayAdapter.EssayHolder>
     static class EssayHolder extends RecyclerView.ViewHolder {
         public TextView essaySoal;
         public TextView essayNo;
-        public JustifiedTextView justifiedTextView;
+        public TextView justifiedTextView;
 
         EssayHolder(View view) {
             super(view);

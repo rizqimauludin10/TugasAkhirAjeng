@@ -25,6 +25,16 @@ public class PilganDataItem {
     @SerializedName("jawaban")
     private String jawaban;
 
+    private int total;
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
+    }
+
     public String getPilihanA() {
         return pilihanA;
     }

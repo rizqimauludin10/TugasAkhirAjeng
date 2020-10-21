@@ -12,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="@dimen/_15sdp"
         android:paddingStart="@dimen/_15sdp"
         android:paddingTop="@dimen/_15sdp"
+        android:paddingBottom="@dimen/_1sdp"
         android:paddingEnd="@dimen/_10sdp">
 
         <TextView
@@ -27,15 +27,15 @@
             android:textColor="@color/text"
             android:textSize="@dimen/_14ssp" />
 
-        <TextView
+        <com.codesgood.views.JustifiedTextView
             android:id="@+id/pilganSoal"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/airbnb_book"
             android:text="@string/lorem"
             android:textAllCaps="false"
             android:textColor="@color/text"
-            android:textSize="@dimen/_16ssp" />
+            android:textSize="@dimen/_12ssp" />
 
     </LinearLayout>
 

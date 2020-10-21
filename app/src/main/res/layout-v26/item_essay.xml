@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:clickable="true"
-    android:focusable="true"
     android:layout_margin="@dimen/_10sdp"
     android:background="@drawable/soal"
+    android:clickable="true"
+    android:focusable="true"
     android:orientation="vertical">
 
     <LinearLayout
@@ -18,18 +18,19 @@
         android:paddingEnd="@dimen/_10sdp">
 
         <TextView
-            android:id="@+id/latihanNo"
+            android:id="@+id/essayNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/_5sdp"
             android:fontFamily="@font/airbnb_book"
+            android:justificationMode="inter_word"
             android:text="1."
             android:textColor="@color/text"
             android:textSize="@dimen/_12ssp" />
 
         <com.codesgood.views.JustifiedTextView
-            android:id="@+id/latihanSoal"
-            android:layout_width="match_parent"
+            android:id="@+id/essaySoal"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/airbnb_book"
             android:text="@string/lorem"
@@ -37,5 +38,6 @@
             android:textColor="@color/text"
             android:textSize="@dimen/_12ssp" />
     </LinearLayout>
+
 
 </LinearLayout>

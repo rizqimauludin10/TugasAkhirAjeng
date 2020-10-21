@@ -98,6 +98,7 @@ public class PilganAdapter extends RecyclerView.Adapter<PilganAdapter.PilganHold
                 if (correct == 0) {
                     if (radioButton.getText().equals(pilganJawaban.getText())) {
                         correct++;
+                        pilganDataItemList.get(0).setTotal(correct);
                         Log.d("True => ", String.valueOf(correct));
                     } else if (!radioButton.getText().equals(pilganJawaban.getText())) {
                         Log.d("Wrong => ", String.valueOf(correct));
@@ -105,14 +106,14 @@ public class PilganAdapter extends RecyclerView.Adapter<PilganAdapter.PilganHold
                 } else if (correct >= 0) {
                     if (radioButton.getText().equals(pilganJawaban.getText())) {
                         correct++;
+                        pilganDataItemList.get(0).setTotal(correct);
                         Log.d("True => ", String.valueOf(correct));
                     } else if (!radioButton.getText().equals(pilganJawaban.getText())) {
                         correct--;
+                        pilganDataItemList.get(0).setTotal(correct);
                         Log.d("Wrong => ", String.valueOf(correct));
                     }
                 }
-
-                Log.d("Total => ", String.valueOf(correct));
 
             });
 
