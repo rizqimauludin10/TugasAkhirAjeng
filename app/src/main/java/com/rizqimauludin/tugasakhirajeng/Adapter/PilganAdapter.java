@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.text.HtmlCompat;
@@ -22,7 +21,9 @@ import java.util.List;
 public class PilganAdapter extends RecyclerView.Adapter<PilganAdapter.PilganHolder> {
     private List<PilganDataItem> pilganDataItemList;
     private Context context;
-    private Integer correct = 0;
+
+    public int correct = 0;
+    public int total;
 
     public PilganAdapter(Context context, List<PilganDataItem> pilganDataItemList) {
         this.context = context;
@@ -47,7 +48,9 @@ public class PilganAdapter extends RecyclerView.Adapter<PilganAdapter.PilganHold
         holder.rbC.setText(pilganDataItem.getPilihanC());
         holder.rbD.setText(pilganDataItem.getPilihanD());
         holder.rbE.setText(pilganDataItem.getPilihanE());
-        //holder.pilganJawaban.setText(pilganDataItem.getJawaban());
+        holder.pilganJawaban.setText(pilganDataItem.getJawaban());
+//        holder.pilganScore.setText(point());
+
     }
 
     @Override
@@ -55,7 +58,8 @@ public class PilganAdapter extends RecyclerView.Adapter<PilganAdapter.PilganHold
         return pilganDataItemList.size();
     }
 
-    public int jawaban() {
+    public Integer point() {
+        Log.d("Total Adapter => ", String.valueOf(correct));
         return correct;
     }
 
@@ -70,6 +74,7 @@ public class PilganAdapter extends RecyclerView.Adapter<PilganAdapter.PilganHold
         public RadioButton rbE;
         public RadioButton radioButton;
         public TextView pilganJawaban;
+        public TextView pilganScore;
 
         public PilganHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,20 +87,36 @@ public class PilganAdapter extends RecyclerView.Adapter<PilganAdapter.PilganHold
             rbC = itemView.findViewById(R.id.rgC);
             rbD = itemView.findViewById(R.id.rgD);
             rbE = itemView.findViewById(R.id.rgE);
-            //pilganJawaban = itemView.findViewById(R.id.pilganJawaban);
+            pilganJawaban = itemView.findViewById(R.id.pilganJawaban);
+            pilganScore = itemView.findViewById(R.id.pilganScore);
 
             rgPilgan.setOnCheckedChangeListener((group, checkedId) -> {
-                Integer radioId;
+                int radioId;
                 radioId = rgPilgan.getCheckedRadioButtonId();
                 radioButton = itemView.findViewById(radioId);
 
-
-                if (radioButton.getText().equals(pilganJawaban.getText())) {
-                    correct++;
-                    Toast.makeText(context, pilganJawaban.getText(), Toast.LENGTH_SHORT).show();
-                    Log.d("Benar => ", String.valueOf(correct));
+                if (correct == 0) {
+                    if (radioButton.getText().equals(pilganJawaban.getText())) {
+                        correct++;
+                        Log.d("True => ", String.valueOf(correct));
+                    } else if (!radioButton.getText().equals(pilganJawaban.getText())) {
+                        Log.d("Wrong => ", String.valueOf(correct));
+                    }
+                } else if (correct >= 0) {
+                    if (radioButton.getText().equals(pilganJawaban.getText())) {
+                        correct++;
+                        Log.d("True => ", String.valueOf(correct));
+                    } else if (!radioButton.getText().equals(pilganJawaban.getText())) {
+                        correct--;
+                        Log.d("Wrong => ", String.valueOf(correct));
+                    }
                 }
+
+                Log.d("Total => ", String.valueOf(correct));
+
             });
+
         }
     }
+
 }

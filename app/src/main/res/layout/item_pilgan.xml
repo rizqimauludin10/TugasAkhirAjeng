@@ -2,16 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background"
     android:clickable="true"
     android:focusable="true"
+    android:layout_margin="@dimen/_10sdp"
+    android:background="@drawable/soal"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:padding="@dimen/_15sdp"
         android:paddingStart="@dimen/_15sdp"
+        android:paddingTop="@dimen/_15sdp"
         android:paddingEnd="@dimen/_10sdp">
 
         <TextView
@@ -22,7 +25,7 @@
             android:fontFamily="@font/airbnb_book"
             android:text="1."
             android:textColor="@color/text"
-            android:textSize="@dimen/_16ssp" />
+            android:textSize="@dimen/_14ssp" />
 
         <TextView
             android:id="@+id/pilganSoal"
@@ -40,10 +43,10 @@
         android:id="@+id/rgPilgan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_5sdp"
         android:orientation="vertical"
-        android:paddingLeft="@dimen/_30sdp"
-        android:paddingRight="@dimen/_10sdp">
+        android:paddingStart="@dimen/_30sdp"
+        android:paddingEnd="@dimen/_10sdp">
 
         <RadioButton
             android:id="@+id/rgA"
@@ -103,15 +106,26 @@
     </RadioGroup>
 
 
-    <!--  <TextView
-          android:id="@+id/pilganJawaban"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:fontFamily="@font/airbnb_book"
-          android:text="jawaban"
-          android:textAllCaps="false"
-          android:textColor="@color/text"
-          android:textSize="@dimen/_16ssp" />-->
+    <TextView
+        android:id="@+id/pilganJawaban"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/airbnb_book"
+        android:text="jawaban"
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        android:textSize="@dimen/_16ssp"
+        android:visibility="gone" />
 
+    <TextView
+        android:id="@+id/pilganScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/airbnb_book"
+        android:text="1"
+        android:textAllCaps="false"
+        android:textColor="@color/text"
+        android:textSize="@dimen/_16ssp"
+        android:visibility="visible" />
 
 </LinearLayout>

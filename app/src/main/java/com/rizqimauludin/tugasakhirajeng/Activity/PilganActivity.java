@@ -48,8 +48,6 @@ public class PilganActivity extends AppCompatActivity {
     private ImageView backMain;
     private AlertDialog.Builder builder;
     private LayoutInflater layoutInflater;
-    private View view;
-    private SharedPreferencesUtils sharedPreferencesUtils;
     private String id;
 
     @Override
@@ -62,7 +60,7 @@ public class PilganActivity extends AppCompatActivity {
         //viewSkor = findViewById(R.id.viewSkor);
         submit = findViewById(R.id.submit);
         context = this;
-        sharedPreferencesUtils = new SharedPreferencesUtils(this);
+        SharedPreferencesUtils sharedPreferencesUtils = new SharedPreferencesUtils(this);
 
         pilganAdapterr = new PilganAdapter(context, pilganDataItems);
 
@@ -98,7 +96,7 @@ public class PilganActivity extends AppCompatActivity {
     }
 
     private double getNilai() {
-        tampung = pilganAdapterr.jawaban() * point;
+//       tampung = pilganAdapterr.point() * point;
         return tampung;
     }
 
@@ -112,6 +110,7 @@ public class PilganActivity extends AppCompatActivity {
                         pilganDataItems = response.body().getData();
                         recyclerView.setAdapter(new PilganAdapter(context, pilganDataItems));
                         jumlahSoal = response.body().getJumlahSoal();
+                        Log.d("Jumlah Soal => ", String.valueOf(jumlahSoal));
 
                         point = (100 / jumlahSoal);
                         //tampung = pilganAdapterr.jawaban() * point;
@@ -136,17 +135,16 @@ public class PilganActivity extends AppCompatActivity {
     private void DialogForm() {
         AlertDialog builder = new AlertDialog.Builder(PilganActivity.this).create();
         layoutInflater = getLayoutInflater();
-        view = layoutInflater.inflate(R.layout.dialog, null);
+        View view = layoutInflater.inflate(R.layout.dialog, null);
         builder.setView(view);
         builder.setCancelable(true);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setTitle("Dialog Tes");
+        builder.setTitle("Finish? ");
         yes = view.findViewById(R.id.yes);
         no = view.findViewById(R.id.no);
         viewSkor = view.findViewById(R.id.viewSkor);
-        //viewSkor.setText(String.valueOf(getNilai()));
 
-        Log.d("Get Nilai => ", String.valueOf(pilganAdapterr.jawaban()));
+        Log.d("Get Score => ", String.valueOf((pilganAdapterr.point())));
 
 
         yes.setOnClickListener(v -> {
