@@ -59,7 +59,7 @@ public class PilganAdapter extends RecyclerView.Adapter<PilganAdapter.PilganHold
     }
 
     public Integer point() {
-        Log.d("Total Adapter => ", String.valueOf(correct));
+        Log.d("Total Method Point => ", String.valueOf(correct));
         return correct;
     }
 

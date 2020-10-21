@@ -126,6 +126,6 @@
         android:textAllCaps="false"
         android:textColor="@color/text"
         android:textSize="@dimen/_16ssp"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
 </LinearLayout>
